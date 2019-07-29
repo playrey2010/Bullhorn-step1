@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a message</title>
+</head>
+<body>
+<form action="#"
+      th:action="@{/process}"
+      th:object="${message}"
+      method="post">
+    <input type="hidden" th:field="*{id}"/>
+    <textarea rows="4" cols="40" th:field="*{content}" placeholder="Write a message..."></textarea>
+    <span th:if="${#fields.hasErrors('content')}"
+          th:errors="*{content}"></span><br>
+
+</form>
+</body>
+</html>
