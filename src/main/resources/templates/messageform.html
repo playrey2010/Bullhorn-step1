@@ -5,15 +5,22 @@
     <title>Add a message</title>
 </head>
 <body>
+<div th:replace="base :: apptitle"></div>
 <form action="#"
       th:action="@{/process}"
       th:object="${message}"
       method="post">
     <input type="hidden" th:field="*{id}"/>
+    Message:<br>
     <textarea rows="4" cols="40" th:field="*{content}" placeholder="Write a message..."></textarea>
     <span th:if="${#fields.hasErrors('content')}"
           th:errors="*{content}"></span><br>
-
+    Name:<br>
+    <input type="text" th:field="*{sentby}" placeholder="Type in your name...">
+    <span th:if="${#fields.hasErrors('sentby')}"
+          th:errors="*{sentby}"></span><br><br>
+    <input type="submit" value="Submit"/><br>
+    <footer th:replace="base :: footer"></footer>
 </form>
 </body>
 </html>

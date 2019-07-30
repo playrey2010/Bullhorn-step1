@@ -43,6 +43,12 @@ public class HomeController {
         return "redirect:/";
     }
 
+    @RequestMapping("/detail/{id}")
+    public String showMessage(@PathVariable("id") long id,
+                              Model model) {
+        model.addAttribute("message", messageRepository.findById(id).get());
+        return "show";
+    }
     @RequestMapping("/update/{id}")
     public String updateMessage(@PathVariable("id") long id,
                                 Model model){
