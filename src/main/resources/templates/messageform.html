@@ -8,12 +8,14 @@
 </head>
 <body>
 <div th:replace="base :: apptitle"></div>
-<form action="#"
+<form action="/add"
       th:action="@{/process}"
       th:object="${message}"
+      enctype="multipart/form-data"
       method="post">
     <input type="hidden" th:field="*{id}"/>
-    Message:<br>
+    <div class="formgroup">
+        <label>Message:</label><br>
     <textarea rows="4" cols="40" th:field="*{content}" placeholder="Write a message..."></textarea>
     <span th:if="${#fields.hasErrors('content')}"
           th:errors="*{content}"></span><br>
@@ -21,7 +23,9 @@
     <input type="text" th:field="*{sentby}" placeholder="Type in your name...">
     <span th:if="${#fields.hasErrors('sentby')}"
           th:errors="*{sentby}"></span><br><br>
-    <input class="btn btn-primary btn-sm" type="submit" value="Submit"/><br>
+    Photo:<br>
+    <input type="file" name="file"/><br><br>
+    <input class="btn btn-primary btn-sm" type="submit" value="Submit"/><br></div>
     <footer th:replace="base :: footer"></footer>
 </form>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
