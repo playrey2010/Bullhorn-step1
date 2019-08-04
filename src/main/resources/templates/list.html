@@ -4,46 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>Message list</title>
-    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="../static/base.css" th:href="@{base.css}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
     <h1 th:replace="base :: apptitle"></h1>
     <a class="btn btn-primary btn-lg" href="/add" role="button">Write a message!</a><br/>
-
-    <div class="alert alert-primary" role="alert">
-        A simple primary alert—check it out!
-    </div>
-    <table class="table table-dark">
-        <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-        </tr>
-        </tbody>
-    </table>
     <table>
         <tr>
             <th>Photo</th>
@@ -64,18 +30,17 @@
                 <a th:href="@{/delete/{id}(id=${message.id})}">Delete</a> -
             </td>
         </tr>
-        <div th:each="message : ${messages}">
+    </table>
+    <div th:each="message : ${messages}">
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" th:src="${message.photo}" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 th:if="${messageStat.index} == 0"     class="card-title">Card title</h5>
                 <p th:text="${message.content}"></p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
-        </div>
-    </table>
-
+    </div>
 
 
     <footer th:replace="base :: footer"></footer>
