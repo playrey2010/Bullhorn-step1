@@ -10,39 +10,21 @@
 <body>
     <h1 th:replace="base :: apptitle"></h1>
     <a class="btn btn-primary btn-lg" href="/add" role="button">Write a message!</a><br/>
-    <table>
-        <tr>
-            <th>Photo</th>
-            <th>Messages</th>
-            <th>Sent by</th>
-            <th>At</th>
-        </tr>
-        <tr th:each="message : ${messages}">
-            <td th:if="${message.photo} != null">
-                <img th:src="${message.photo}">
-            </td>
-            <td th:text="${message.content}"></td>
-            <td th:text="${message.sentby}"></td>
-            <td th:text="${message.date}"></td>
-            <td>
-                <a th:href="@{/update/{id}(id=${message.id})}">Update</a> -
-                <a th:href="@{/detail/{id}(id=${message.id})}">Details</a> -
-                <a th:href="@{/delete/{id}(id=${message.id})}">Delete</a> -
-            </td>
-        </tr>
-    </table>
-    <div th:each="message : ${messages}">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" th:src="${message.photo}" alt="Card image cap">
-            <div class="card-body">
-                <h5 th:if="${messageStat.index} == 0"     class="card-title">Card title</h5>
-                <p th:text="${message.content}"></p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-
-
+    <main>
+                <div class="row">
+                    <div class="column" th:each="message : ${messages}">
+                <div  class="card" style="width: 18rem">
+                    <img class="card-img-top" th:src="${message.photo}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${message.title}">Card title</h5>
+                        <p id="card-text" th:text="${message.content}"></p>
+                        <p>test</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+    </main>
     <footer th:replace="base :: footer"></footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

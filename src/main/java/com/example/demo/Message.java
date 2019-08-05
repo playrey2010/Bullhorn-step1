@@ -19,6 +19,9 @@ public class Message {
     private String content;
     private LocalDate date;
 
+    @NotEmpty(message = "Message title is empty!")
+    private String title;
+
     @NotEmpty(message = "Please, write your name!")
     private String sentby;
     private String photo;
@@ -61,5 +64,13 @@ public class Message {
 
     public void setPhoto(String photo) {
         this.photo = photo;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

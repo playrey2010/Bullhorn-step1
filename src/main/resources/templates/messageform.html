@@ -16,6 +16,10 @@
       method="post">
     <input type="hidden" th:field="*{id}"/>
     <div class="formgroup">
+     Title:<br>
+        <input type="text" th:field="*{title}" placeholder="Title...">
+        <span th:if="${#fields.hasErrors('title')}"
+              th:errors="*{title}"></span><br><br>
         <label>Message:</label><br>
     <textarea rows="4" cols="40" th:field="*{content}" placeholder="Write a message..."></textarea>
     <span th:if="${#fields.hasErrors('content')}"
@@ -26,7 +30,8 @@
           th:errors="*{sentby}"></span><br><br>
     Photo:<br>
     <input type="file" name="file"/><br><br>
-    <input class="btn btn-primary btn-sm" type="submit" value="Submit"/><br></div>
+    <input class="btn btn-primary btn-sm" type="submit" value="Submit"/><br>
+    </div>
     <footer th:replace="base :: footer"></footer>
 </form>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

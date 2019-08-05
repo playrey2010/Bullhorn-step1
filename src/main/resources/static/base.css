@@ -1,0 +1,57 @@
+header {
+    padding: 60px;
+    text-align: center;
+    background-color: #43ffd5;
+}
+
+
+main {
+    background-color: red;
+    max-width: 100%;
+    margin: auto;
+}
+
+
+.row {
+    max-width: 100%;
+
+}
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+    
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+img {
+    width: 100px;
+    height: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.card {
+    background-color: blue;
+    margin-left: 2%;
+}
+
+footer {
+    background-color: #931420;
+    clear: both;
+    text-align: center;
+    color: white;
+    padding: 1em 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
