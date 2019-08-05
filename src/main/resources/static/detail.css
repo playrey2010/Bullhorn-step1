@@ -13,30 +13,10 @@ header {
     text-align: center;
     background-color: #43ffd5;
 }
-
-
 main {
     max-width: 100%;
     margin: auto;
-}
-
-
-.row {
-    max-width: 100%;
-
-}
-.column {
-    float: left;
-    width: 33.33%;
-    padding: 5px;
-    
-}
-
-/* Clearfix (clear floats) */
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
+    align-content: center;
 }
 
 img {
@@ -68,4 +48,3 @@ footer {
     bottom: 0;
     width: 100%;
 }
-
