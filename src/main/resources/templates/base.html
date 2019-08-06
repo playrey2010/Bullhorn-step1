@@ -12,14 +12,14 @@
         <h1>Bullhorn</h1>
         <h2>Definitely better than Twitter!</h2>
     </header>
-    <ul class="navigation bar">
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#about">About</a></li>
+    <ul th:fragment="navbar" class="navigation bar">
+        <li><a class="active" href="/">Home</a></li>
+        <li><a href="/add">Post your message!</a></li>
     </ul>
-
-
+    <ul th:fragment="navbar2" class="navigation bar">
+        <li><a href="/">Home</a></li>
+        <li><a class="active" href="/add">Post your message!</a></li>
+    </ul>
 
     <footer th:fragment="footer">Created by Reynaldo Aponte</footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -11,10 +11,7 @@
     <div id="page-container">
         <div id="content-wrap">
     <header th:replace="base :: apptitle"></header>
-            <ul class="navigation bar">
-                <li><a class="active" href="/">Home</a></li>
-                <li><a href="/add">Post your message!</a></li>
-            </ul>
+    <ul th:replace="base :: navbar"></ul>
     <a class="btn btn-primary btn-lg" href="/add" role="button">Write a message!</a><br/>
     <main>
                 <div class="row">
