@@ -13,7 +13,29 @@ header {
     text-align: center;
     background-color: #43ffd5;
 }
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
 
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
 
 main {
     max-width: 100%;
@@ -52,11 +74,14 @@ div.card {
     margin-left: 10%;
 }
 
-.divider{
-    width:5px;
-    height:auto;
-    display:inline-block;
+div h5.card-title {
+    text-align: center;
 }
+
+p#card-text {
+    text-align: left;
+}
+
 
 footer {
     background-color: #931420;
@@ -68,4 +93,5 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
 

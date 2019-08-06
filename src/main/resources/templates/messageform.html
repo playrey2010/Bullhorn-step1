@@ -9,6 +9,10 @@
 </head>
 <body>
 <div th:replace="base :: apptitle"></div>
+<ul class="navigation bar">
+    <li><a class="active" href="/">Home</a></li>
+    <li><a href="/add">Post your message!</a></li>
+</ul>
 <form action="/add"
       th:action="@{/process}"
       th:object="${message}"

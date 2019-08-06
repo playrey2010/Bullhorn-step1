@@ -15,27 +15,22 @@ header {
 }
 main {
     max-width: 100%;
-    margin: auto;
+    margin-top: auto;
     align-content: center;
 }
 
 img {
-    width: 100px;
-    height: 250px;
+    width: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-div.card {
+div.card  {
     background-color: #43ffd5;
-    margin-left: 10%;
-}
-
-.divider{
-    width:5px;
-    height:auto;
-    display:inline-block;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 footer {
