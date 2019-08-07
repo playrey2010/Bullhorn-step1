@@ -44,9 +44,16 @@ public class HomeController {
         if (result.hasErrors()){
             return "messageform";
         }
-        else if (file.isEmpty()){
+        else if (file.isEmpty() && message.getPhoto().equals("")){
+            message.setPhoto(null);
             messageRepository.save(message);
+            System.out.println("file empty and message get photo is null");
             return "redirect:/";
+        }
+        else if (file.isEmpty() && message.getPhoto() != null){
+            System.out.println("file empty and message is not null");
+            messageRepository.save(message);
+            return  "redirect:/";
         }
         try {
             Map uploadResult = cloudc.upload(file.getBytes(),
