@@ -11,14 +11,16 @@
     <div id="page-container">
         <div id="content-wrap">
             <header th:replace="base :: apptitle"></header>
-            <br>
+            <ul th:replace="base :: navbar"></ul><br><br>
             <main>
                         <div  class="card h-100" style="width: 18rem">
                             <img th:if="${message.photo} != null" class="card-img-top" th:src="${message.photo}">
                             <div class="card-body">
                                 <h5 class="card-title" th:text="${message.title}">Card title</h5>
                                 <p id="card-text" th:text="${message.content}"></p>
-                                <a th:href="@{/update/{id}(id=${message.id})}" class="btn btn-primary btn-sm">Update</a>
+                                <div id="buttongroup1">
+                                <a th:href="@{/update/{id}(id=${message.id})}" class="btn btn-dark btn-lg">Update</a>
+                                </div>
                             </div>
                         </div>
             </main>

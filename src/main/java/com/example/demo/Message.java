@@ -16,10 +16,12 @@ public class Message {
     private long id;
 
     @NotEmpty(message = "Your message is empty!")
+    @Size(max = 250, message = "Please do not exceed 250 characters.")
     private String content;
     private LocalDate date;
 
     @NotEmpty(message = "Message title is empty!")
+    @Size (max = 30, message = "Please do not exceed 30 characters.")
     private String title;
 
     @NotEmpty(message = "Please, write your name!")

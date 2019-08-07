@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>Message list</title>
+    <title>Bullhorn</title>
     <link rel="stylesheet" href="../static/base.css" th:href="@{base.css}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
@@ -12,7 +12,6 @@
         <div id="content-wrap">
     <header th:replace="base :: apptitle"></header>
     <ul th:replace="base :: navbar"></ul>
-    <a class="btn btn-primary btn-lg" href="/add" role="button">Write a message!</a><br/>
     <main>
                 <div class="row">
                     <div class="column" th:each="message : ${messages}">
@@ -21,13 +20,17 @@
                     <div class="card-body">
                         <h5 class="card-title" th:text="${message.title}">Card title</h5>
                         <p id="card-text" th:text="${message.content}"></p>
-                        <a th:href="@{/update/{id}(id=${message.id})}" class="btn btn-primary btn-sm">Update</a>
-                        <a th:href="@{/detail/{id}(id=${message.id})}" class="btn btn-primary btn-sm">Details</a>
+                        <p id="sentby" th:text="${message.sentby}"></p>
+                        <p id="date-posted" th:text="${message.date}"></p>
+                        <div id="buttongroup1">
+                        <a th:href="@{/update/{id}(id=${message.id})}" class="btn btn-dark btn-sm">Update</a>
+                        <a th:href="@{/detail/{id}(id=${message.id})}" class="btn btn-dark btn-sm">Details</a>
+                        </div>
                     </div>
                 </div>
                     </div>
                 </div>
-    </main>
+    </main><br><br><br><br>
         </div>
     <footer th:replace="base :: footer"></footer>
     </div>

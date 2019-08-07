@@ -1,15 +1,18 @@
 #page-container {
     position: relative;
     min-height: 100vh;
+    background-color: #ffda66;
 }
-
+span {
+    color: red;
+}
 
 #content-wrap {
     padding-bottom: 2.5rem;    /* Footer height */
 }
 
 header {
-    padding: 60px;
+    padding: 10px 0 5px 0;
     text-align: center;
     background-color: #43ffd5;
 }
@@ -29,7 +32,7 @@ li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 10px 12px;
     text-decoration: none;
 }
 
@@ -51,7 +54,6 @@ main {
     float: left;
     width: 33.33%;
     padding: 5px;
-    
 }
 
 /* Clearfix (clear floats) */
@@ -59,6 +61,13 @@ main {
     content: "";
     clear: both;
     display: table;
+}
+
+div.card {
+    background-color: #43ffd5;
+    margin-left: 10%;
+    border: 2px solid black;
+    border-radius: 12px;
 }
 
 img {
@@ -69,11 +78,6 @@ img {
     margin-right: auto;
 }
 
-div.card {
-    background-color: #43ffd5;
-    margin-left: 10%;
-}
-
 div h5.card-title {
     text-align: center;
 }
@@ -82,16 +86,53 @@ p#card-text {
     text-align: left;
 }
 
+p#sentby {
+    font-size: 14px;
+    text-align: end;
+}
+p#date-posted {
+    font-size: 10px;
+    text-align: end;
+}
+
+div#buttongroup1 {
+    display: block;
+    position: relative;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+}
 
 footer {
-    background-color: #111;
+    background-color: #333;
     clear: both;
     text-align: center;
     color: white;
-    padding: 1em 0;
     position: absolute;
     bottom: 0;
     width: 100%;
 }
 
+.formgroup {
+    display: block;
+    margin: auto;
+    padding-left: auto;
+    padding-right: auto;
+    text-align: center;
+}
 
+#formblock {
+    border: 2px solid black;
+    border-radius: 12px;
+    display: inline-block;
+    text-align: left;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+div#submitbutton {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}

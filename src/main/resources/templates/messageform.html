@@ -11,10 +11,7 @@
 <div id="page-container">
     <div id="content-wrap">
 <header th:replace="base :: apptitle"></header>
-<ul class="navigation bar">
-    <li><a class="active" href="/">Home</a></li>
-    <li><a href="/add">Post your message!</a></li>
-</ul>
+        <ul th:replace="base :: navbar2"></ul><br><br>
 <form action="/add"
       th:action="@{/process}"
       th:object="${message}"
@@ -22,6 +19,7 @@
       method="post">
     <input type="hidden" th:field="*{id}"/>
     <div class="formgroup">
+        <div id="formblock">
      Title:<br>
         <input type="text" th:field="*{title}" placeholder="Title...">
         <span th:if="${#fields.hasErrors('title')}"
@@ -36,7 +34,9 @@
           th:errors="*{sentby}"></span><br><br>
     Photo:<br>
     <input type="file" name="file"/><br><br>
-    <input class="btn btn-primary btn-lg" type="submit" value="Submit"/><br><br><br>
+            <div id="submitbutton">
+    <input class="btn btn-dark btn-lg" type="submit" value="Submit"/></div><br>
+        </div>
     </div>
 </form>
     </div>
