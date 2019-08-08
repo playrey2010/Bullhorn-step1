@@ -47,7 +47,6 @@ public class HomeController {
         else if (file.isEmpty() && message.getPhoto().equals("")){
             message.setPhoto(null);
             messageRepository.save(message);
-            System.out.println("file empty and message get photo is null");
             return "redirect:/";
         }
         else if (file.isEmpty() && message.getPhoto() != null){

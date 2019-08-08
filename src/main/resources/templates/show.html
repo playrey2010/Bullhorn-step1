@@ -20,6 +20,7 @@
                                 <p id="card-text" th:text="${message.content}"></p>
                                 <div id="buttongroup1">
                                 <a th:href="@{/update/{id}(id=${message.id})}" class="btn btn-dark btn-lg">Update</a>
+                                    <a th:href="@{/delete/{id}(id=${message.id})}" class="btn btn-danger btn-lg">Delete</a>
                                 </div>
                             </div>
                         </div>
